@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &156821055525419452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 156821055525419443}
+  - component: {fileID: 156821055525419442}
+  m_Layer: 0
+  m_Name: ShopManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &156821055525419443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156821055525419452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &156821055525419442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156821055525419452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78809a59284e49beb01d482063bb7749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopOptions: {fileID: 11400000, guid: a047487eb5daddf458481daa0fdc80c1, type: 2}
+  pageSwiper: {fileID: 0}
+  skinButton: {fileID: 7792788424665062672, guid: 0cd4e9974a0afbd4890e3c1ae2c31b9a, type: 3}
+  costText: {fileID: 0}
+  exclamationMark: {fileID: 0}
+  rarityOptions:
+  - rarityHolder: {fileID: 0}
+    skinRarity: 0
+    buttonAmount: 9
+    rarityCost: 300
+    activeButtonColor: {r: 1, g: 0.8352941, b: 0.45882353, a: 1}
+    deActiveButtonColor: {r: 1, g: 0.627451, b: 0, a: 1}
+  - rarityHolder: {fileID: 0}
+    skinRarity: 1
+    buttonAmount: 9
+    rarityCost: 700
+    activeButtonColor: {r: 0.46666667, g: 0.84313726, b: 1, a: 1}
+    deActiveButtonColor: {r: 0.07058824, g: 0.42745098, b: 1, a: 1}
+  - rarityHolder: {fileID: 0}
+    skinRarity: 2
+    buttonAmount: 9
+    rarityCost: 1200
+    activeButtonColor: {r: 0.5753287, g: 1, b: 0.07058823, a: 1}
+    deActiveButtonColor: {r: 0.10136038, g: 0.7264151, b: 0, a: 1}
+  shopButtons: []

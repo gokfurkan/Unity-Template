@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37025a2eae884434a8ee65c281c985e3, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  loadOptions:
+    nextSceneAfterLoad: 1
+    loadFillOption:
+    - stageAmount: 0.25
+      stageDuration: 0.35
+      nextStageDelay: 0.35
+    - stageAmount: 0.8
+      stageDuration: 0.65
+      nextStageDelay: 0.4
+    - stageAmount: 1
+      stageDuration: 0.25
+      nextStageDelay: 0
+  gamePlayOptions:
+    vSyncEnabled: 0
+    targetFPS: 60
+  economyOptions:
+    useMoneyAnimation: 1
+    moneyAnimationDuration: 0.5
+    winIncome: 50
+    loseIncome: 0
+    spawnMoneyAmount: 8
+  uiOptions:
+    winPanelDelay: 1
+    losePanelDelay: 1
+    endContinueDelay: 1.5
+    levelText: 'LEVEL '
+    hasEndPanelLevel: 0
+    levelCompletedText: LEVEL COMPLETED
+    levelFailedText: LEVEL FAILED
+    textFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  logOptions:
+    logLevelToSave: 1
