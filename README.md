@@ -1,1 +1,1 @@
-# Pasham Games Unity Template
+# Unity Template
