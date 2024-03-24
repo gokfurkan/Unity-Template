@@ -2,10 +2,28 @@
 
 namespace Template.Scripts
 {
+    [Flags]
+    public enum LogLevel
+    {
+        None = 0,
+        Error = 1 << 0,
+        Assert = 1 << 1,
+        Warning = 1 << 2,
+        Log = 1 << 3,
+        Exception = 1 << 4,
+        All = Error | Assert | Warning | Log | Exception
+    }
+    
     public enum SceneType
     {
         Load,
         Game,
+    }
+    
+    public enum TransitionType
+    {
+        Fade,
+        Door,
     }
 
     public enum PanelType
@@ -25,24 +43,22 @@ namespace Template.Scripts
         DailyRewards,
         OpenDailyRewards,
     }
-    
-    [Flags]
-    public enum LogLevel
-    {
-        None = 0,
-        Error = 1 << 0,
-        Assert = 1 << 1,
-        Warning = 1 << 2,
-        Log = 1 << 3,
-        Exception = 1 << 4,
-        All = Error | Assert | Warning | Log | Exception
-    }
 
     public enum LevelTextType
     {
         Level,
         LevelCompleted,
         LevelFailed,
+    }
+    
+    public enum PoolType
+    {
+        
+    }
+
+    public enum ParticlePoolType
+    {
+        
     }
     
     public enum SkinRarity
@@ -67,19 +83,9 @@ namespace Template.Scripts
         
     }
 
-    public enum PoolType
+    public enum EconomyType
     {
-        
-    }
-
-    public enum ParticlePoolType
-    {
-        
-    }
-
-    public enum TransitionType
-    {
-        Fade,
-        Door,
+        Money,
+        Coin,
     }
 }

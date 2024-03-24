@@ -1,5 +1,5 @@
 using System;
-using Template.Scripts.Scriptables;
+using Template.Scripts.SO;
 using UnityEngine;
 
 namespace Template.Scripts

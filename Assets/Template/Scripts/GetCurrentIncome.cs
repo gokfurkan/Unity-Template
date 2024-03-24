@@ -1,4 +1,4 @@
-﻿using Template.Scripts.Scriptables;
+﻿using Template.Scripts.SO;
 using TMPro;
 using UnityEngine;
 

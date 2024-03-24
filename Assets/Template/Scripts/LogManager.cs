@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using Template.Scripts.Scriptables;
+using Template.Scripts.SO;
 using UnityEngine;
 
 namespace Template.Scripts

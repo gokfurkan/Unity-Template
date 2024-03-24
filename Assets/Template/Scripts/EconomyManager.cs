@@ -64,7 +64,7 @@ namespace Template.Scripts
                 newMoneyTarget = SaveManager.Instance.saveData.GetMoneys();
             }
             
-            if (InfrastructureManager.Instance.gameSettings.economyOptions.useMoneyAnimation)
+            if (InfrastructureManager.Instance.gameSettings.economyOptions.useEconomyAnim)
             {
                 AnimateMoneyText(oldMoneyTarget, newMoneyTarget);
             }
@@ -78,7 +78,7 @@ namespace Template.Scripts
         
         private void SpawnMoneys()
         {
-            for (int i = 0; i < InfrastructureManager.Instance.gameSettings.economyOptions.spawnMoneyAmount; i++)
+            for (int i = 0; i < InfrastructureManager.Instance.gameSettings.economyOptions.spawnIncomeAmount; i++)
             {
                 var money = Instantiate(moneyPrefab, spawnPos);
                 money.InitMoney(targetPos);
@@ -87,7 +87,7 @@ namespace Template.Scripts
             
         private void AnimateMoneyText(int startAmount, int targetAmount)
         {
-            DOTween.To(() => startAmount, x => startAmount = x, targetAmount, InfrastructureManager.Instance.gameSettings.economyOptions.moneyAnimationDuration)
+            DOTween.To(() => startAmount, x => startAmount = x, targetAmount, InfrastructureManager.Instance.gameSettings.economyOptions.economyAnimDuration)
                 .OnUpdate(() => moneyText.text = MoneyCalculator.NumberToStringFormatter(startAmount))
                 .SetEase(Ease.Linear)
                 .SetUpdate(true)

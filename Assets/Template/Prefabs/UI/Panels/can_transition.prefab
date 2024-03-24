@@ -382,7 +382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1961092949256340026}
   m_Layer: 5
-  m_Name: Holder
+  m_Name: holder_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6535782121666267793}
   m_Layer: 5
-  m_Name: Holder
+  m_Name: holder_fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

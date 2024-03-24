@@ -34,7 +34,7 @@ namespace Template.Scripts
             
             if (Input.GetKeyDown(KeyCode.F))
             {
-                TransitionController.Instance.StartTransition(TransitionType.Door);
+                TransitionManager.Instance.StartTransition(TransitionType.Door);
             }
         }
 #endif
