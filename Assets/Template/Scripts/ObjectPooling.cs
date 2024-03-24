@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Template.Scripts
 {
-    public class Pooling : Singleton<Pooling>
+    public class ObjectPooling : Singleton<ObjectPooling>
     {
         [SerializeField] private Transform parent;
         public Pool[] poolObjects;

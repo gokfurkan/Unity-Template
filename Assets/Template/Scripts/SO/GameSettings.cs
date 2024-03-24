@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Template.Scripts.SO
 {

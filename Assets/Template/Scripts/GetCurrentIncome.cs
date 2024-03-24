@@ -1,5 +1,4 @@
-﻿using Template.Scripts.SO;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace Template.Scripts
@@ -10,20 +9,12 @@ namespace Template.Scripts
 
         private void Start()
         {
-            InitIncomeTextType();
+            InitializeIncomeText();
         }
 
-        private void InitIncomeTextType()
+        private void InitializeIncomeText()
         {
-            TextMeshProUGUI text = GetComponent<TextMeshProUGUI>();
-            EconomyOptions economyOptions = InfrastructureManager.Instance.gameSettings.economyOptions;
-
-            switch (incomeTextType)
-            {
-                case IncomeTextType.Win:
-                    text.text = economyOptions.winIncome.ToString();
-                    break;
-            }
+            UIManager.Instance.SetCurrentIncomeText(GetComponent<TextMeshProUGUI>() , incomeTextType);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Template.Scripts
             Debug.Log("Game saved!");
         }
 
-        public void Load()
+        private void Load()
         {
             if (File.Exists(GetSavePath()))
             {

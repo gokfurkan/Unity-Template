@@ -16,6 +16,11 @@ namespace Template.Scripts
             
             StartCoroutine(GetRealDateTimeFromAPI());
         }
+        
+        public DateTime GetCurrentDateTime()
+        {
+            return currentDateTime.AddSeconds(Time.realtimeSinceStartup);
+        }
 
         private IEnumerator GetRealDateTimeFromAPI()
         {
@@ -33,12 +38,7 @@ namespace Template.Scripts
 
             currentDateTime = DateTime.Parse(timeData.datetime);
         }
-
-        public DateTime GetCurrentDateTime()
-        {
-            return currentDateTime.AddSeconds(Time.realtimeSinceStartup);
-        }
-
+        
         [Serializable]
         private class TimeData
         {

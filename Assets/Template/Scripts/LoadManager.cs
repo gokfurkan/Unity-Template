@@ -18,13 +18,12 @@ namespace Template.Scripts
             base.Initialize();
 
             InitializeLoad();
-            
-            StartCoroutine(RunLoadingSequence());
         }
 
         private void InitializeLoad()
         {
             loadOptions = InfrastructureManager.Instance.gameSettings.loadOptions;
+            StartCoroutine(RunLoadingSequence());
         }
 
         private IEnumerator RunLoadingSequence()

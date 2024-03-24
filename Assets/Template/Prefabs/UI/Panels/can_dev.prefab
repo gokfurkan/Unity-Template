@@ -345,7 +345,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5034603865313337908}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Template.Scripts.DevPanelManager, Assembly-CSharp
         m_MethodName: ChangeLevel
         m_Mode: 1
@@ -504,7 +504,6 @@ GameObject:
   - component: {fileID: 4701623796092613853}
   - component: {fileID: 4701623796092613854}
   - component: {fileID: 4701623796092613855}
-  - component: {fileID: 5034603865313337908}
   - component: {fileID: 1022116504}
   m_Layer: 0
   m_Name: can_dev
@@ -600,19 +599,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
---- !u!114 &5034603865313337908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4701623796092613843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7ec107762a475e8423a92d177d6bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ipf: {fileID: 4701623795537731711}
 --- !u!114 &1022116504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1487,7 +1473,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5034603865313337908}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Template.Scripts.DevPanelController, Assembly-CSharp
         m_MethodName: ResetSaveData
         m_Mode: 1

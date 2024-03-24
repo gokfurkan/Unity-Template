@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Template.Scripts
 {
-    public class DevPanelController : MonoBehaviour
+    public class DevPanelManager : MonoBehaviour
     {
         public InputField ipf;
 

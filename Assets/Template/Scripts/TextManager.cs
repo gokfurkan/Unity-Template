@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Template.Scripts.SO;
+using TMPro;
 using UnityEngine;
 
 namespace Template.Scripts
@@ -6,6 +7,7 @@ namespace Template.Scripts
     public class TextManager : Singleton<TextManager>
     {
         private TMP_FontAsset textFont;
+        private UIOptions uiOptions;
         
         protected override void Initialize()
         {
@@ -16,7 +18,8 @@ namespace Template.Scripts
 
         private void InitializeTextSystem()
         {
-            textFont = InfrastructureManager.Instance.gameSettings.uiOptions.textFont;
+            uiOptions = InfrastructureManager.Instance.gameSettings.uiOptions;
+            textFont = uiOptions.textFont;
         }
         
         public void SetFont(TextMeshProUGUI textComponent)
