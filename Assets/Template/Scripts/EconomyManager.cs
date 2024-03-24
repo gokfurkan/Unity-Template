@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Template.Scripts
 {
-    public class EconomyManager : MonoBehaviour
+    public class EconomyManager : Singleton<EconomyManager>
     {
         [SerializeField] private TextMeshProUGUI moneyText;
         [SerializeField] private Money moneyPrefab;
@@ -15,18 +15,12 @@ namespace Template.Scripts
         
         private void OnEnable()
         {
-            BusSystem.OnAddMoneys += AddMoneys;
-            BusSystem.OnResetMoneys += ResetMoneys;
             BusSystem.OnSetMoneys += SetMoneyText;
-            BusSystem.OnSpawnMoneys += SpawnMoneys;
         }
 
         private void OnDisable()
         {
-            BusSystem.OnAddMoneys -= AddMoneys;
-            BusSystem.OnResetMoneys -= ResetMoneys;
             BusSystem.OnSetMoneys -= SetMoneyText;
-            BusSystem.OnSpawnMoneys -= SpawnMoneys;
         }
 
         private void Start()
@@ -34,7 +28,7 @@ namespace Template.Scripts
             BusSystem.CallSetMoneys();
         }
         
-        private void AddMoneys(int amount)
+        public void AddMoneys(int amount)
         {
             var oldAmount =  SaveManager.Instance.saveData.GetMoneys();
             var newAmount = oldAmount + amount;
@@ -48,7 +42,7 @@ namespace Template.Scripts
             SetMoneyText();
         }
 
-        private void ResetMoneys()
+        public void ResetMoneys()
         {
             SaveManager.Instance.saveData.moneys = 0;
             SaveManager.Instance.Save();
@@ -76,7 +70,7 @@ namespace Template.Scripts
             // BusSystem.CallRefreshUpgradeValues();
         }
         
-        private void SpawnMoneys()
+        public void SpawnMoneys()
         {
             for (int i = 0; i < InfrastructureManager.Instance.gameSettings.economyOptions.spawnIncomeAmount; i++)
             {

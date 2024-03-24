@@ -5,19 +5,12 @@ namespace Template.Scripts
     public static class BusSystem
     {
         //Economy
-        public static Action <int> OnAddMoneys;
-        public static void CallAddMoneys(int amount) { OnAddMoneys?.Invoke(amount); }
-        
-        public static Action OnResetMoneys;
-        public static void CallResetMoneys() { OnResetMoneys?.Invoke(); }
         
         public static Action OnSetMoneys;
         public static void CallSetMoneys() { OnSetMoneys?.Invoke(); }
         
-        public static Action OnSpawnMoneys;
-        public static void CallSpawnMoneys() { OnSpawnMoneys?.Invoke(); }
-        
         //Game Manager
+        
         public static Action OnLevelStart;
         public static void CallLevelStart() { OnLevelStart?.Invoke(); }
      

@@ -1,4 +1,3 @@
-using System;
 using Template.Scripts.SO;
 using UnityEngine;
 
@@ -24,13 +23,13 @@ namespace Template.Scripts
 
         private void ChangeLogEnabled()
         {
-            if (Application.isMobilePlatform)
+            if (Application.isEditor)
             {
-                Debug.unityLogger.logEnabled = false;
+                Debug.unityLogger.logEnabled = true;
             }
             else
             {
-                Debug.unityLogger.logEnabled = true;
+                Debug.unityLogger.logEnabled = false;
             }
         }
     }

@@ -69,8 +69,8 @@ namespace Template.Scripts
                 
                 Activate(PanelType.Win);
                 
-                BusSystem.CallAddMoneys(InfrastructureManager.Instance.gameSettings.economyOptions.winIncome);
-                BusSystem.CallSpawnMoneys();
+                EconomyManager.Instance.AddMoneys(InfrastructureManager.Instance.gameSettings.economyOptions.winIncome);
+                EconomyManager.Instance.SpawnMoneys();
             }
             else
             {
@@ -78,7 +78,7 @@ namespace Template.Scripts
                 
                 Activate(PanelType.Lose);
                 
-                BusSystem.CallAddMoneys(InfrastructureManager.Instance.gameSettings.economyOptions.loseIncome);
+                EconomyManager.Instance.AddMoneys(InfrastructureManager.Instance.gameSettings.economyOptions.loseIncome);
             }
             
             yield return new WaitForSeconds(InfrastructureManager.Instance.gameSettings.uiOptions.endContinueDelay);

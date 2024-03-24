@@ -29,7 +29,7 @@ namespace Template.Scripts
             
             if (Input.GetKeyDown(KeyCode.M))
             {
-                BusSystem.CallAddMoneys(5000);
+                EconomyManager.Instance.AddMoneys(5000);
             }
             
             if (Input.GetKeyDown(KeyCode.F))

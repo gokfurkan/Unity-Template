@@ -104,7 +104,7 @@ namespace Shop_V1.Scripts
             SaveManager.Instance.Save();
 
             SetItemUnlockStatus();
-            BusSystem.CallAddMoneys(-currentRarityCost);
+            EconomyManager.Instance.AddMoneys(-currentRarityCost);
         }
         
         private void OnChangeShopPage()

@@ -1,5 +1,4 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace Template.Scripts
@@ -8,7 +7,7 @@ namespace Template.Scripts
     {
         private void Start()
         {
-            gameObject.GetComponent<TextMeshProUGUI>().font = InfrastructureManager.Instance.gameSettings.uiOptions.textFont;
+            TextManager.Instance.SetFont(GetComponent<TextMeshProUGUI>());
         }
     }
 }
