@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Template.Scripts
 {
+    [RequireComponent(typeof(TextMeshProUGUI))]
     public class GetCurrentIncome : MonoBehaviour
     {
         [SerializeField] private IncomeTextType incomeTextType;

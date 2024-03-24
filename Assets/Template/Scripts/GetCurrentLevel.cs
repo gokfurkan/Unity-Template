@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Template.Scripts
 {
+    [RequireComponent(typeof(TextMeshProUGUI))]
     public class GetCurrentLevel : MonoBehaviour
     {
         [SerializeField] private LevelTextType textType;

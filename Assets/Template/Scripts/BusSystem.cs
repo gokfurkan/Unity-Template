@@ -5,12 +5,10 @@ namespace Template.Scripts
     public static class BusSystem
     {
         //Economy
-        
         public static Action OnSetMoneys;
         public static void CallSetMoneys() { OnSetMoneys?.Invoke(); }
         
         //Game Manager
-        
         public static Action OnLevelStart;
         public static void CallLevelStart() { OnLevelStart?.Invoke(); }
      

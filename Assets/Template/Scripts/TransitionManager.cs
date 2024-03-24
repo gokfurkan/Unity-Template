@@ -4,12 +4,12 @@ namespace Template.Scripts
 {
     public class TransitionManager : PersistentSingleton<TransitionManager>
     {
-        public Animator fadeAnimator;
-        public Animator doorAnimator;
+        [SerializeField] private Animator fadeAnimator;
+        [SerializeField] private Animator doorAnimator;
 
         [Space(10)]
-        public GameObject fadePanel;
-        public GameObject doorPanel;
+        [SerializeField] private GameObject fadePanel;
+        [SerializeField] private GameObject doorPanel;
         
         private static readonly int StartSequence = Animator.StringToHash("StartSequence");
 

@@ -6,7 +6,7 @@ namespace Template.Scripts
 {
     public class DevPanelManager : MonoBehaviour
     {
-        public InputField ipf;
+        [SerializeField] private InputField ipf;
 
         public void ChangeLevel()
         {
