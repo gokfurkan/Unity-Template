@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
@@ -7,100 +8,72 @@ namespace Template.Scripts
     [DisallowMultipleComponent]
     public class ButtonClickController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
     {
-        [SerializeField] private bool singleClick;
-        [SerializeField] private bool callOnHold;
-        [SerializeField] private bool canAnimate = true;
+        [SerializeField] private bool allowSingleClick = true;
+        [SerializeField] private bool triggerOnHold = false;
+        [SerializeField] private bool enableAnimation = true;
+        [SerializeField] private float pressedScaleMultiplier = 0.875f;
+        [SerializeField] private float animationDuration = 0.2f;
         public UnityEvent onClick;
 
-        private bool _clickedOnce;
-        private bool startAnimate;
-        private bool animateUp;
-        private bool firstDown;
+        private bool clickedOnce;
+        private bool isPointerDown;
 
-        private Transform tr;
-        private Vector3 currentScale;
-
+        private Transform buttonTransform;
+        private Vector3 initialScale;
+        
         private void Start()
         {
-            tr = transform;
-        }
-
-        private void OnEnable()
-        {
-            firstDown = false;
-        }
-    
-        private void LateUpdate()
-        {
-            if (!startAnimate)
-            {
-                return;
-            }
-
-            if (!animateUp)
-            {
-                tr.localScale = Vector3.MoveTowards(tr.localScale, currentScale * 0.875f, Time.unscaledDeltaTime * 3);
-            }
-            else
-            {
-                tr.localScale = Vector3.MoveTowards(tr.localScale, currentScale, Time.unscaledDeltaTime * 3);
-                if (tr.localScale == currentScale)
-                {
-                    animateUp = false;
-                    startAnimate = false;
-                }
-            }
+            buttonTransform = transform;
+            initialScale = buttonTransform.localScale;
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (callOnHold)
-            {
+            if (triggerOnHold || (isPointerDown && enableAnimation))
                 return;
-            }
 
-            CallFunction();
+            InvokeButtonClick();
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (!firstDown)
-            {
-                currentScale = transform.localScale;
-                firstDown = true;
-            }
-
-            if (canAnimate)
-            {
-                startAnimate = true;
-            }
-           
-            animateUp = false;
-
-            if (!callOnHold)
-            {
-                return;
-            }
-
-            CallFunction();
+            isPointerDown = true;
+            if (enableAnimation)
+                StartPressAnimation();
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            animateUp = true;
+            isPointerDown = false;
+            if (enableAnimation)
+                EndPressAnimation();
         }
 
-        private void CallFunction()
+        private void StartPressAnimation()
         {
-            if (singleClick && !_clickedOnce)
+            buttonTransform.DOScale(initialScale * pressedScaleMultiplier, animationDuration)
+                .SetEase(Ease.OutQuad);
+        }
+
+        private void EndPressAnimation()
+        {
+            buttonTransform.DOScale(initialScale, animationDuration)
+                .SetEase(Ease.OutQuad);
+        }
+
+        private void InvokeButtonClick()
+        {
+            if (allowSingleClick && !clickedOnce)
             {
-                _clickedOnce = true;
+                clickedOnce = true;
                 onClick.Invoke();
             }
-            else if (!singleClick)
+            else if (!allowSingleClick)
             {
                 onClick.Invoke();
             }
+            
+            clickedOnce = false;
         }
     }
 }
