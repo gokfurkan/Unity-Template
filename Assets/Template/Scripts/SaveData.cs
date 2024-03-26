@@ -25,8 +25,9 @@ namespace Template.Scripts
         
         [Header("Daily Rewards")]
         public string lastRewardClaimDate;
+        public int lastRewardClaimIndex;
         public int firstSetRewardUnlockStatus = 0;
-        public List<bool> rewardsUnlockStatus = new List<bool>(7);
+        public List<int> rewardsUnlockStatus = new List<int>(7);
         
         
         //Get

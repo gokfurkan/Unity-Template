@@ -36,26 +36,27 @@ namespace Shop_V1.Scripts
         {
             BusSystem.OnSetMoneys += CallSetExclamationMarkEnabledDelayed;
             BusSystem.OnSetMoneys += SetUnlockButtonActivate;
-            BusSystem.OnChangeShopPanelPage += OnChangeShopPage;
+            OnChangeShopPanelPage += OnChangeShopPage;
         }
 
         private void OnDisable()
         {
             BusSystem.OnSetMoneys -= CallSetExclamationMarkEnabledDelayed;
             BusSystem.OnSetMoneys -= SetUnlockButtonActivate;
-            BusSystem.OnChangeShopPanelPage -= OnChangeShopPage;
+            OnChangeShopPanelPage -= OnChangeShopPage;
         }
 
         protected override void Initialize()
         {
             base.Initialize();
             
-            exclamationMark.SetActive(false);
             InitShop();
         }
 
         private void InitShop()
         {
+            exclamationMark.SetActive(false);
+            
             InitializeShopButtons();
             InitializeSkinUnlockData();
             InitSetSkin(SaveManager.Instance.saveData.currentSkin);
@@ -66,7 +67,7 @@ namespace Shop_V1.Scripts
             SetItemUnlockStatus();
             SetItemSelectStatus(selectedItem);
             
-            BusSystem.CallSetPlayerSkin();
+            CallSetPlayerSkin();
         }
         
         public void OnSetSkin(int buttonIndex)
@@ -77,7 +78,7 @@ namespace Shop_V1.Scripts
             SetItemUnlockStatus();
             SetItemSelectStatus(buttonIndex);
             
-            BusSystem.CallSetPlayerSkin();
+            CallSetPlayerSkin();
         }
         
         public void UnlockRandomSkin()
@@ -306,6 +307,12 @@ namespace Shop_V1.Scripts
 
             return false;
         }
+        
+        public static Action OnChangeShopPanelPage;
+        public static void CallChangeShopPanelPage() { OnChangeShopPanelPage?.Invoke(); }
+
+        public static Action OnSetPlayerSkin;
+        public static void CallSetPlayerSkin() { OnSetPlayerSkin?.Invoke(); }
     }
     
     [Serializable]
@@ -333,5 +340,12 @@ namespace Shop_V1.Scripts
         public int rarityCost;
         public Color activeButtonColor;
         public Color deActiveButtonColor;
+    }
+    
+    public enum SkinRarity
+    {
+        Standard,
+        Vip,
+        Epic
     }
 }

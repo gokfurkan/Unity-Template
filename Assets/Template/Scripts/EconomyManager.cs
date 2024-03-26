@@ -70,11 +70,17 @@ namespace Template.Scripts
             // BusSystem.CallRefreshUpgradeValues();
         }
         
-        public void SpawnMoneys()
+        public void SpawnMoneys(RectTransform spawn , float scale = 80)
         {
+            if (spawn == null)
+            {
+                spawn = spawnPos;
+            }
+            
             for (int i = 0; i < InfrastructureManager.Instance.gameSettings.economyOptions.spawnIncomeAmount; i++)
             {
-                var money = Instantiate(moneyPrefab, spawnPos);
+                var money = Instantiate(moneyPrefab, spawn);
+                money.GetComponent<RectTransform>().sizeDelta = new Vector2(scale , scale);
                 money.InitMoney(targetPos);
             }
         }

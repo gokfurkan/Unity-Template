@@ -60,13 +60,6 @@ namespace Template.Scripts
     {
         
     }
-    
-    public enum SkinRarity
-    {
-        Standard,
-        Vip,
-        Epic
-    }
 
     public enum IncomeTextType
     {

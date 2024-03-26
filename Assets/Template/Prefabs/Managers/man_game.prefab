@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1813177375266335815}
   - component: {fileID: 1813177375266335812}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: man_game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d623a70944a94721ba43e84930b3f910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGameStart: 0
-  isLevelPlaying: 0
-  isLevelEnd: 0
-  isLevelWin: 0
-  isLevelLose: 0
+  gameStatus:
+    hasGameStart: 0
+    hasLevelPlaying: 0
+    hasLevelEnd: 0
+    hasLevelWin: 0
+    hasLevelLose: 0

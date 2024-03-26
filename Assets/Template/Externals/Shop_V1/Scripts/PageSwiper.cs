@@ -68,7 +68,7 @@ namespace Shop_V1.Scripts
 
             SetPageChangerEnabled();
             
-            BusSystem.CallChangeShopPanelPage();
+            ShopManager.CallChangeShopPanelPage();
         }
 
         private void SetPageChangerEnabled()

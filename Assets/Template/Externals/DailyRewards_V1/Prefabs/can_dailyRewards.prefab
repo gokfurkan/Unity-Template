@@ -431,9 +431,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631d61bd1a82439f945c240069897cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleClick: 0
-  callOnHold: 0
-  canAnimate: 1
+  allowSingleClick: 1
+  triggerOnHold: 0
+  enableAnimation: 0
+  pressedScaleMultiplier: 0.875
+  animationDuration: 0.2
   onClick:
     m_PersistentCalls:
       m_Calls:
@@ -1029,9 +1031,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631d61bd1a82439f945c240069897cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleClick: 0
-  callOnHold: 0
-  canAnimate: 0
+  allowSingleClick: 1
+  triggerOnHold: 0
+  enableAnimation: 1
+  pressedScaleMultiplier: 0.875
+  animationDuration: 0.2
   onClick:
     m_PersistentCalls:
       m_Calls:
@@ -1060,7 +1064,7 @@ GameObject:
   - component: {fileID: 1459348530028751411}
   - component: {fileID: 3933617902634812373}
   m_Layer: 0
-  m_Name: txt_nextToClaim
+  m_Name: txt_remainingReward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

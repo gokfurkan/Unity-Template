@@ -43,6 +43,7 @@ namespace Template.Scripts
             Activate(PanelType.Level);
             Activate(PanelType.OpenSettings);
             Activate(PanelType.Restart);
+            Activate(PanelType.OpenDailyRewards);
         }
 
         private void ActivateGamePanel()
@@ -70,7 +71,7 @@ namespace Template.Scripts
                 Activate(PanelType.Win);
                 
                 EconomyManager.Instance.AddMoneys(InfrastructureManager.Instance.gameSettings.economyOptions.winIncome);
-                EconomyManager.Instance.SpawnMoneys();
+                EconomyManager.Instance.SpawnMoneys(null);
             }
             else
             {

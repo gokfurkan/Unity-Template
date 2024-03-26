@@ -17,8 +17,5 @@ namespace Shop_V1.Scripts
         public float dragThreshHold;
         public float pageChangeSpeed;
         public Ease pageChangeEase;
-        
-        
-        
     }
 }
