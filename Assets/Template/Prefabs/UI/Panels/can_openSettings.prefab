@@ -139,9 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631d61bd1a82439f945c240069897cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleClick: 0
-  callOnHold: 0
-  canAnimate: 1
+  allowSingleClick: 1
+  triggerOnHold: 0
+  enableAnimation: 1
+  pressedScaleMultiplier: 0.875
+  animationDuration: 0.2
   onClick:
     m_PersistentCalls:
       m_Calls:

@@ -15,16 +15,15 @@ namespace Template.Externals.DailyRewards_V1.Scripts
         [SerializeField] private GameObject collectStatus;
         
         [Space(10)]
-        [SerializeField] private Image rewardIconImage;
         [SerializeField] private TextMeshProUGUI rewardAmountText;
+        public Image rewardIconImage;
         
         public RewardButtonOption DailyRewardOption { get; set; }
         
         public void InitializeRewardButton()
         {
             DisableAllStatus();
-
-            DailyRewardOption.rewardImage = rewardIconImage;
+            
             rewardIconImage.sprite = DailyRewardOption.rewardIcon;
             rewardAmountText.text = DailyRewardOption.rewardAmount.ToString();
         }

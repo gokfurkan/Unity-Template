@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1f0da9ea3148e9aba592fc4279673e, type: 3}
   m_Name: DailyRewardOptions
   m_EditorClassIdentifier: 
+  perCheckClaimRewardLeft: 3
   rewardLoopHours: 24
-  controlRewardLeftHours: 2
   rewardSpawnUISize: 50

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Template.Scripts
 {
@@ -26,7 +27,7 @@ namespace Template.Scripts
         [Header("Daily Rewards")]
         public int lastRewardClaimIndex;
         public int firstSetRewardUnlockStatus = 0;
-        public DateTime LastRewardClaimDate;
+        public string lastRewardClaimDate;
         public List<int> rewardsUnlockStatus = new List<int>(7);
         
         

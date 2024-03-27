@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using Template.Scripts;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Template.Externals.DailyRewards_V1.Scripts
@@ -11,6 +13,7 @@ namespace Template.Externals.DailyRewards_V1.Scripts
     {
         [SerializeField] private DailyRewardOptions dailyRewardOptions;
         [SerializeField] private TextMeshProUGUI remainingRewardText;
+        [SerializeField] private GameObject exclamationMark;
         
         [Space(10)]
         [SerializeField] private List<DailyRewardButton> rewardButtons;
@@ -18,11 +21,11 @@ namespace Template.Externals.DailyRewards_V1.Scripts
         
         public bool HasOpenRewardPanel { get; set; }
 
+        private float leftControlRemainingReward;
+        
         private DateTime lastRewardClaimDate;
         private DateTime currentDateTime;
         private TimeSpan timeSinceLastClaim;
-
-        private float leftControlRemainingReward;
         
         private SaveData saveData;
 
@@ -41,7 +44,7 @@ namespace Template.Externals.DailyRewards_V1.Scripts
                 if (leftControlRemainingReward <= 0)
                 {
                     RefreshDateTime();
-                    leftControlRemainingReward = dailyRewardOptions.controlRewardLeftHours;
+                    leftControlRemainingReward = dailyRewardOptions.perCheckClaimRewardLeft;
                 }
             }
         }
@@ -49,10 +52,11 @@ namespace Template.Externals.DailyRewards_V1.Scripts
         private void InitializeDailyRewardSystem()
         {
             saveData = SaveManager.Instance.saveData;
+            leftControlRemainingReward = dailyRewardOptions.perCheckClaimRewardLeft;
             
             InitializeRewardData();
             InitializeRewardButtons();
-            RefreshRewardButtons();
+            RefreshDateTime();
         }
         
         private void InitializeRewardButtons()
@@ -80,14 +84,14 @@ namespace Template.Externals.DailyRewards_V1.Scripts
             {
                 case DailyRewardGiveType.Money:
                     EconomyManager.Instance.AddMoneys(rewardOption.rewardAmount);
-                    EconomyManager.Instance.SpawnMoneys(rewardOption.rewardImage.rectTransform , dailyRewardOptions.rewardSpawnUISize);
+                    EconomyManager.Instance.SpawnMoneys(rewardButton.rewardIconImage.rectTransform, dailyRewardOptions.rewardSpawnUISize);
                     break;
             }
             
             saveData.rewardsUnlockStatus[saveData.lastRewardClaimIndex] = 2;
             
             currentDateTime = WorldTimeAPI.Instance.GetCurrentDateTime();
-            saveData.LastRewardClaimDate = currentDateTime;
+            saveData.lastRewardClaimDate = currentDateTime.ToString();
             timeSinceLastClaim = currentDateTime - lastRewardClaimDate;
             
             RefreshDateTime();
@@ -97,47 +101,53 @@ namespace Template.Externals.DailyRewards_V1.Scripts
 
         public void RefreshDateTime()
         {
-            lastRewardClaimDate = saveData.LastRewardClaimDate;
+            if (saveData.lastRewardClaimDate != null)
+            {
+                lastRewardClaimDate = DateTime.Parse(saveData.lastRewardClaimDate);
+            }
+           
             currentDateTime = WorldTimeAPI.Instance.GetCurrentDateTime();
             timeSinceLastClaim = currentDateTime - lastRewardClaimDate;
             
-            if (lastRewardClaimDate == DateTime.MinValue)
+            if (string.IsNullOrEmpty(saveData.lastRewardClaimDate))
             {
                 Debug.Log("No previous reward claim record found.");
-
+                
+                exclamationMark.gameObject.SetActive(true);
                 remainingRewardText.gameObject.SetActive(false);
                 
                 lastRewardClaimDate = currentDateTime;
                 timeSinceLastClaim = TimeSpan.Zero;
                 
-                saveData.LastRewardClaimDate = lastRewardClaimDate;
-                SaveManager.Instance.Save();
+                saveData.lastRewardClaimDate = lastRewardClaimDate.ToString();
             }
             else
             {
-                double hoursSinceLastClaim = timeSinceLastClaim.TotalHours;
-
-                if (hoursSinceLastClaim > dailyRewardOptions.rewardLoopHours)
+                if (saveData.rewardsUnlockStatus[saveData.lastRewardClaimIndex] == 1)
                 {
-                    if (HasAllCollected())
+                    exclamationMark.gameObject.SetActive(true);
+                    remainingRewardText.gameObject.SetActive(false);
+                    
+                    Debug.Log("Reward not collected yet.");
+                }
+                else
+                {
+                    double hoursSinceLastClaim = timeSinceLastClaim.TotalHours;
+
+                    if (hoursSinceLastClaim > dailyRewardOptions.rewardLoopHours)
                     {
-                        ResetRewardData();
-                        
-                        SaveManager.Instance.Save();
-                        
-                        remainingRewardText.gameObject.SetActive(false);
-                        
-                        Debug.Log("All collected");
-                    }
-                    else
-                    {
-                        if (saveData.rewardsUnlockStatus[saveData.lastRewardClaimIndex] == 1)
+                        if (HasAllCollected())
                         {
+                            ResetRewardData();
+                        
+                            exclamationMark.gameObject.SetActive(false);
                             remainingRewardText.gameObject.SetActive(false);
-                            Debug.Log("Reward not collected yet.");
+                        
+                            Debug.Log("All rewards collected");
                         }
                         else
                         {
+                            exclamationMark.gameObject.SetActive(false);
                             remainingRewardText.gameObject.SetActive(false);
 
                             saveData.lastRewardClaimIndex++;
@@ -150,28 +160,29 @@ namespace Template.Externals.DailyRewards_V1.Scripts
                             {
                                 saveData.rewardsUnlockStatus[saveData.lastRewardClaimIndex] = 1;
                             }
-                        
-                            SaveManager.Instance.Save();
-                        
+                            
                             Debug.Log("Daily reward loop completed.");
-                        }   
+                        }
                     }
-                }
-                else
-                {
-                    remainingRewardText.gameObject.SetActive(true);
-                    Debug.Log("Daily reward loop not completed yet.");
-                }
+                    else
+                    {
+                        exclamationMark.gameObject.SetActive(false);
+                        remainingRewardText.gameObject.SetActive(true);
+                        
+                        Debug.Log("Daily reward loop not completed yet.");
+                    }
+                }   
             }
 
             SetRemainingRewardText();
             RefreshRewardButtons();
+            
+            SaveManager.Instance.Save();
         }
 
         private void SetRemainingRewardText()
         {
             var remainingReward = lastRewardClaimDate.AddHours(dailyRewardOptions.rewardLoopHours) - currentDateTime;
-            Debug.Log(remainingReward);
             
             remainingRewardText.text = $"{remainingReward.Hours.ToString().PadLeft(2, '0')}h" +
                                        $" {(remainingReward.Minutes).ToString().PadLeft(2, '0')}m" + " left to claim reward";
@@ -203,6 +214,8 @@ namespace Template.Externals.DailyRewards_V1.Scripts
             saveData.rewardsUnlockStatus[0] = 1;
 
             saveData.lastRewardClaimIndex = 0;
+            
+            SaveManager.Instance.Save();
         }
         
         private void InitializeRewardData()
@@ -229,7 +242,7 @@ namespace Template.Externals.DailyRewards_V1.Scripts
     public class RewardButtonOption
     {
         public DailyRewardGiveType rewardGiveType;
-        public Image rewardImage;
+        [PreviewField]
         public Sprite rewardIcon;
         public int rewardAmount;
     }

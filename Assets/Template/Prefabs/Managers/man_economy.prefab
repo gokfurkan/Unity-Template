@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 0}
-  moneyPrefab: {fileID: 0}
+  moneyPrefab: {fileID: 1787405044519195609, guid: fa85defc64ba1d5498d4e6dfc69f2d8a, type: 3}
   spawnPos: {fileID: 0}
   targetPos: {fileID: 0}
