@@ -188,6 +188,16 @@ namespace Template.Externals.DailyRewards_V1.Scripts
                                        $" {(remainingReward.Minutes).ToString().PadLeft(2, '0')}m" + " left to claim reward";
         }
 
+        [Button]
+        private void DecreaseRemainingClaimDate()
+        {
+            lastRewardClaimDate = DateTime.Parse(saveData.lastRewardClaimDate);
+            lastRewardClaimDate = lastRewardClaimDate.AddHours(-1);
+            saveData.lastRewardClaimDate = lastRewardClaimDate.ToString();
+            
+            RefreshDateTime();
+        }
+
         private bool HasAllCollected()
         {
             bool hasAllCollected = true;

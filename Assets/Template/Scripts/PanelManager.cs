@@ -44,7 +44,9 @@ namespace Template.Scripts
             Activate(PanelType.Level);
             Activate(PanelType.OpenSettings);
             Activate(PanelType.Restart);
-            Activate(PanelType.OpenDailyRewards);
+            
+            // Activate(PanelType.OpenShop);
+            // Activate(PanelType.OpenDailyRewards);
         }
 
         private void ActivateGamePanel()
