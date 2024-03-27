@@ -19,7 +19,7 @@ namespace Template.Scripts
             string jsonData = JsonUtility.ToJson(saveData);
             File.WriteAllText(GetSavePath(), jsonData);
 
-            Debug.Log("Game saved!");
+            // Debug.Log("Game saved!");
         }
 
         private void Load()
@@ -29,7 +29,7 @@ namespace Template.Scripts
                 string jsonData = File.ReadAllText(GetSavePath());
                 saveData = JsonUtility.FromJson<SaveData>(jsonData);
 
-                Debug.Log("Save loaded!");
+                // Debug.Log("Save loaded!");
             }
             else
             {

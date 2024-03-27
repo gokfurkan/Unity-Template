@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowSingleClick: 1
   triggerOnHold: 0
-  enableAnimation: 1
+  enableAnimation: 0
   pressedScaleMultiplier: 0.875
   animationDuration: 0.2
   onClick:

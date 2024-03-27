@@ -44,3 +44,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38ae24319244825852ab5ec49af39e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dailyRewardOptions: {fileID: 11400000, guid: 91f78dfc5388e104693cb5531c49a48d, type: 2}
+  remainingRewardText: {fileID: 0}
+  rewardButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  rewardButtonOptions:
+  - rewardGiveType: 0
+    rewardImage: {fileID: 0}
+    rewardIcon: {fileID: 21300000, guid: ab01bdf0f16894b4ba423f68aae1e72d, type: 3}
+    rewardAmount: 15
+  - rewardGiveType: 0
+    rewardImage: {fileID: 0}
+    rewardIcon: {fileID: 21300000, guid: ab01bdf0f16894b4ba423f68aae1e72d, type: 3}
+    rewardAmount: 35
+  - rewardGiveType: 0
+    rewardImage: {fileID: 0}
+    rewardIcon: {fileID: 21300000, guid: ab01bdf0f16894b4ba423f68aae1e72d, type: 3}
+    rewardAmount: 50
+  - rewardGiveType: 0
+    rewardImage: {fileID: 0}
+    rewardIcon: {fileID: 21300000, guid: ab01bdf0f16894b4ba423f68aae1e72d, type: 3}
+    rewardAmount: 80
+  - rewardGiveType: 0
+    rewardImage: {fileID: 0}
+    rewardIcon: {fileID: 21300000, guid: ab01bdf0f16894b4ba423f68aae1e72d, type: 3}
+    rewardAmount: 120
+  - rewardGiveType: 0
+    rewardImage: {fileID: 0}
+    rewardIcon: {fileID: 21300000, guid: ab01bdf0f16894b4ba423f68aae1e72d, type: 3}
+    rewardAmount: 250
+  - rewardGiveType: 0
+    rewardImage: {fileID: 0}
+    rewardIcon: {fileID: 21300000, guid: ab01bdf0f16894b4ba423f68aae1e72d, type: 3}
+    rewardAmount: 1000

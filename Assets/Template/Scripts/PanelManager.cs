@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Template.Externals.DailyRewards_V1.Scripts;
 using UnityEngine;
 
 namespace Template.Scripts
@@ -113,12 +114,17 @@ namespace Template.Scripts
         
         public void ActivateDailyRewardsPanel()
         {
+            DailyRewardManager.Instance.RefreshDateTime();
+            DailyRewardManager.Instance.HasOpenRewardPanel = true;
+            
             Activate(PanelType.OpenDailyRewards , false);
             Activate(PanelType.DailyRewards);
         }
 
         public void DeActivateDailyRewardsPanel()
         {
+            DailyRewardManager.Instance.HasOpenRewardPanel = false;
+            
             Activate(PanelType.DailyRewards , false);
             Activate(PanelType.OpenDailyRewards);
         }

@@ -24,9 +24,9 @@ namespace Template.Scripts
         public List<bool> skinsUnlockStatus = new List<bool>(27);
         
         [Header("Daily Rewards")]
-        public string lastRewardClaimDate;
         public int lastRewardClaimIndex;
         public int firstSetRewardUnlockStatus = 0;
+        public DateTime LastRewardClaimDate;
         public List<int> rewardsUnlockStatus = new List<int>(7);
         
         
