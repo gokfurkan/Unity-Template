@@ -6,7 +6,7 @@ using Template.Scripts;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Shop_V1.Scripts
+namespace Template.Externals.Shop_V1.Scripts
 {
     public class PageSwiper : MonoBehaviour , IEndDragHandler
     {

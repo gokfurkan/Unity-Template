@@ -44,7 +44,7 @@ namespace Template.Scripts
                 switch (textType)
                 {
                     case LevelTextType.Level:
-                        textComponent.text = $"{levelText}{levelNumber}";
+                        textComponent.text = $"{levelText}{levelNumber + 1}";
                         break;
                     case LevelTextType.LevelCompleted:
                         textComponent.text = uiOptions.hasEndPanelLevel ? $"{levelText} {completedText}" : completedText;

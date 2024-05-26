@@ -14,6 +14,7 @@ namespace Template.Scripts
             else
             {
                 Instance = this as T;
+                SingletonManager.Instance.RegisterSingleton(Instance);
                 Initialize();
             }
         }
@@ -35,6 +36,7 @@ namespace Template.Scripts
             else
             {
                 Instance = this as T;
+                SingletonManager.Instance!.RegisterPersistentSingleton(Instance);
                 DontDestroyOnLoad(gameObject);
                 Initialize();
             }

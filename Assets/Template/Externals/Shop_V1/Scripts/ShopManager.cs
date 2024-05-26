@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-namespace Shop_V1.Scripts
+namespace Template.Externals.Shop_V1.Scripts
 {
     public class ShopManager : Singleton<ShopManager>
     {

@@ -51,7 +51,7 @@ namespace Template.Scripts
         LevelFailed,
     }
     
-    public enum PoolType
+    public enum ObjectPoolType
     {
         
     }

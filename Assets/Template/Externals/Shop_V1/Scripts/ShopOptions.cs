@@ -2,7 +2,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-namespace Shop_V1.Scripts
+namespace Template.Externals.Shop_V1.Scripts
 {
     [CreateAssetMenu(fileName = "ShopOptions", menuName = "ScriptableObjects/ShopOptions")]
     public class ShopOptions : ScriptableObject

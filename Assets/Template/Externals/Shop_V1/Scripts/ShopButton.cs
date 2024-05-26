@@ -1,8 +1,7 @@
-﻿using System;
-using Template.Scripts;
+﻿using Template.Scripts;
 using UnityEngine;
 
-namespace Shop_V1.Scripts
+namespace Template.Externals.Shop_V1.Scripts
 {
     public class ShopButton : MonoBehaviour
     {
