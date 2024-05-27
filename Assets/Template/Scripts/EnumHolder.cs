@@ -42,6 +42,7 @@ namespace Template.Scripts
         OpenShop,
         DailyRewards,
         OpenDailyRewards,
+        InternetCheck,
     }
 
     public enum LevelTextType

@@ -143,6 +143,16 @@ namespace Template.Scripts
             Activate(PanelType.OpenDev);
         }
 
+        public void ActivateNoInternetPanel()
+        {
+            Activate(PanelType.InternetCheck);
+        }
+
+        public void DeActivateNoInternetPanel()
+        {
+            Activate(PanelType.InternetCheck , false);
+        }
+
         public void LoadLevel()
         {
             BusSystem.CallLevelLoad();

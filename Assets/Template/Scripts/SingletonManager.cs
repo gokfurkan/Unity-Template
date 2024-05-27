@@ -33,12 +33,18 @@ namespace Template.Scripts
         {
             for (int i = 0; i < singletons.Count; i++)
             {
-                Destroy(singletons[i].gameObject);
+                if (singletons[i].gameObject != null)
+                {
+                    Destroy(singletons[i].gameObject);
+                }
             }
             
             for (int i = 0; i < persistentSingletons.Count; i++)
             {
-                Destroy(persistentSingletons[i].gameObject);
+                if (persistentSingletons[i].gameObject != null)
+                {
+                    Destroy(persistentSingletons[i].gameObject);
+                }
             }
             
             singletons.Clear();

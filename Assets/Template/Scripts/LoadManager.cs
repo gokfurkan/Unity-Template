@@ -32,7 +32,7 @@ namespace Template.Scripts
             loadAnimator.SetTrigger(StartSequence);
             
             yield return new WaitForSeconds(loadOptions.loadDuration);
-            
+
             SceneManager.LoadScene((int)SceneType.Game);
         }
     }

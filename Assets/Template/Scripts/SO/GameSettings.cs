@@ -14,6 +14,7 @@ namespace Template.Scripts.SO
         public EconomyOptions economyOptions;
         public UIOptions uiOptions;
         public LogOptions logOptions;
+        public ConnectionOptions connectionOptions;
     }
 
     [Serializable]
@@ -67,5 +68,12 @@ namespace Template.Scripts.SO
     public class LogOptions
     {
         public LogLevel logLevelToSave = LogLevel.All;
+    }
+
+    [Serializable]
+    public class ConnectionOptions
+    {
+        public float checkInternetPerTime;
+        public float startCheckTime;
     }
 }
