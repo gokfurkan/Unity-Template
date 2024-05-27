@@ -77,7 +77,7 @@ namespace Template.Scripts
                 spawn = spawnPos;
             }
             
-            for (int i = 0; i < InfrastructureManager.Instance.gameSettings.economyOptions.spawnIncomeAmount; i++)
+            for (int i = 0; i < InfrastructureManager.Instance.gameSettings.economyOptions.endSpawnIncomeAmount; i++)
             {
                 var money = Instantiate(moneyPrefab, spawn);
                 money.GetComponent<RectTransform>().sizeDelta = new Vector2(scale , scale);

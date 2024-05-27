@@ -13,17 +13,16 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   loadOptions:
-    loadDuration: 5
+    loadDuration: 2.5
   gamePlayOptions:
     vSyncEnabled: 0
     targetFPS: 60
   economyOptions:
-    economyType: 0
     useEconomyAnim: 1
     economyAnimDuration: 0.5
     winIncome: 50
     loseIncome: 0
-    spawnIncomeAmount: 8
+    endSpawnIncomeAmount: 8
   uiOptions:
     winPanelDelay: 1
     losePanelDelay: 1

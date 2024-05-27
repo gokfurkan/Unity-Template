@@ -2,6 +2,7 @@
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Template.Scripts.SO
 {
@@ -31,9 +32,6 @@ namespace Template.Scripts.SO
     [Serializable]
     public class EconomyOptions
     {
-        public EconomyType economyType;
-        
-        [Space(10)]
         public bool useEconomyAnim; 
         [ShowIf(nameof(useEconomyAnim))]
         public float economyAnimDuration;
@@ -43,7 +41,7 @@ namespace Template.Scripts.SO
         public int loseIncome;
         
         [Space(10)] 
-        public int spawnIncomeAmount;
+        public int endSpawnIncomeAmount;
     }
 
     [Serializable]
