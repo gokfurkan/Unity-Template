@@ -39,11 +39,12 @@ namespace Template.Scripts
         {
             DisableAll();
             
-            Activate(PanelType.OpenDev);
             Activate(PanelType.Money);
             Activate(PanelType.Level);
+            Activate(PanelType.OpenDev);
             Activate(PanelType.OpenSettings);
-            Activate(PanelType.Restart);
+            
+            // Activate(PanelType.Restart);
             
             // Activate(PanelType.OpenShop);
             // Activate(PanelType.OpenDailyRewards);
@@ -51,7 +52,8 @@ namespace Template.Scripts
 
         private void ActivateGamePanel()
         {
-            
+            Activate(PanelType.OpenDev , false);
+            Activate(PanelType.OpenSettings , false);
         }
 
         private void ActivateEndPanel(bool win)
