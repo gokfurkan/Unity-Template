@@ -54,7 +54,7 @@ namespace Template.Scripts
     
     public enum ObjectPoolType
     {
-        
+        MoneyUI,
     }
 
     public enum ParticlePoolType
@@ -65,6 +65,7 @@ namespace Template.Scripts
     public enum IncomeTextType
     {
         Win,
+        Lose,
     }
 
     public enum CameraType

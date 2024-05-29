@@ -8,6 +8,7 @@ namespace Template.Scripts
     public class SaveData
     {
         //Set
+        [Header("Game")]
         public int level;
         public int moneys;
         

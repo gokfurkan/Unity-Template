@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 7964892842792996803}
   - component: {fileID: 7964892842792996814}
   - component: {fileID: 7964892842792996813}
-  - component: {fileID: 7964892842792996815}
+  - component: {fileID: 2406620982444429899}
   m_Layer: 5
   m_Name: img_background
   m_TagString: Untagged
@@ -262,7 +262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10, y: -25}
+  m_AnchoredPosition: {x: 0, y: -25}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &7964892842792996814
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
   borderWidth: 0
   falloffDistance: 1
---- !u!114 &7964892842792996815
+--- !u!114 &2406620982444429899
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -314,10 +314,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7964892842792996802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8714c362c0c8a6449a9559a31cdab9a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 68356c3764ad390429ddad9e48ce8c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 20
+  radius: {x: 20, y: 0, z: 0, w: 20}
 --- !u!1 &8693557316633338193
 GameObject:
   m_ObjectHideFlags: 0

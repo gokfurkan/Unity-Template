@@ -206,7 +206,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3724896162369410573, guid: 0b808f1999a6b304dbba5e49c85d6516, type: 3}
       propertyPath: m_Name
-      value: man_internetChecker
+      value: man_internet
       objectReference: {fileID: 0}
     - target: {fileID: 5969365389872710194, guid: 0b808f1999a6b304dbba5e49c85d6516, type: 3}
       propertyPath: m_RootOrder
@@ -826,7 +826,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1868988846269463640, guid: f9793a8e991970f40b80bad906aa953b, type: 3}
       propertyPath: m_Name
-      value: can_internetCheck
+      value: can_internetError
       objectReference: {fileID: 0}
     - target: {fileID: 1868988846269463640, guid: f9793a8e991970f40b80bad906aa953b, type: 3}
       propertyPath: m_IsActive
@@ -927,6 +927,10 @@ PrefabInstance:
     - target: {fileID: 2671278445377451618, guid: f9793a8e991970f40b80bad906aa953b, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Template.Scripts.InternetChecker, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555745585747052882, guid: f9793a8e991970f40b80bad906aa953b, type: 3}
+      propertyPath: m_text
+      value: RETRY
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9793a8e991970f40b80bad906aa953b, type: 3}
@@ -1071,6 +1075,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: can_win
       objectReference: {fileID: 0}
+    - target: {fileID: 3423404399246704508, guid: 201912f3cdf108d4eb8451609970bfce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3423404399246704509, guid: 201912f3cdf108d4eb8451609970bfce, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1163,7 +1171,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 201912f3cdf108d4eb8451609970bfce, type: 3}
 --- !u!224 &733116623464286326 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3423404399026435236, guid: 201912f3cdf108d4eb8451609970bfce, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3404084730102208711, guid: 201912f3cdf108d4eb8451609970bfce, type: 3}
   m_PrefabInstance: {fileID: 733116623464286325}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1532486627145884474
@@ -1908,6 +1916,10 @@ PrefabInstance:
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2077392293}
+    - target: {fileID: 8947347319811676962, guid: ea6391bf6354eae44ae657dffe49945b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea6391bf6354eae44ae657dffe49945b, type: 3}
 --- !u!1001 &5137709005961394483

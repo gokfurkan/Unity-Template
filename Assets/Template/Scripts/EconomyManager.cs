@@ -7,7 +7,6 @@ namespace Template.Scripts
     public class EconomyManager : Singleton<EconomyManager>
     {
         [SerializeField] private TextMeshProUGUI moneyText;
-        [SerializeField] private Money moneyPrefab;
         [SerializeField] private RectTransform spawnPos;
         [SerializeField] private RectTransform targetPos;
 
@@ -79,9 +78,10 @@ namespace Template.Scripts
             
             for (int i = 0; i < InfrastructureManager.Instance.gameSettings.economyOptions.endSpawnIncomeAmount; i++)
             {
-                var money = Instantiate(moneyPrefab, spawn);
+                var money = ObjectPooling.Instance.poolObjects[(int)ObjectPoolType.MoneyUI].GetItem();
+                var moneyController = money.GetComponent<Money>();
                 money.GetComponent<RectTransform>().sizeDelta = new Vector2(scale , scale);
-                money.InitMoney(targetPos);
+                moneyController.InitMoney(targetPos , spawn);
             }
         }
             

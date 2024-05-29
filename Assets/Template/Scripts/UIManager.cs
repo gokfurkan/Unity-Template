@@ -1,4 +1,5 @@
-﻿using Template.Scripts.SO;
+﻿using System;
+using Template.Scripts.SO;
 using TMPro;
 using UnityEngine;
 
@@ -71,6 +72,11 @@ namespace Template.Scripts
                     case IncomeTextType.Win:
                         textComponent.text = economyOptions.winIncome.ToString();
                         break;
+                    case IncomeTextType.Lose:
+                        textComponent.text = economyOptions.loseIncome.ToString();
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(textType), textType, null);
                 }
             }
             else
