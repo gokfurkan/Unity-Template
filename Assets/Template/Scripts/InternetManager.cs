@@ -30,7 +30,7 @@ namespace Template.Scripts
             if (remainingCheckTime <= 0)
             {
                 CheckInternetConnection();
-                ControlNoInternetPanel();
+                ControlInternetErrorPanel();
                 
                 remainingCheckTime = checkPerTime;
             }
@@ -42,40 +42,19 @@ namespace Template.Scripts
             {
                 case NetworkReachability.NotReachable:
                     hasInternet = false;
-                    // Debug.Log("No internet connection");
                     break;
                 case NetworkReachability.ReachableViaCarrierDataNetwork:
                     hasInternet = true;
-                    // Debug.Log("Internet connection available via mobile data");
                     break;
                 case NetworkReachability.ReachableViaLocalAreaNetwork:
                     hasInternet = true;
-                    // Debug.Log("Internet connection available via WiFi");
                     break;
             }
         }
 
-        private void ControlNoInternetPanel()
+        private void ControlInternetErrorPanel()
         {
-            if (hasInternet)
-            {
-                PanelManager.Instance.DeActivateNoInternetPanel();
-            }
-            else
-            {
-                PanelManager.Instance.ActivateNoInternetPanel();
-            }
-        }
-
-        public void RetryCheckInternetWithRestart()
-        {
-            // SingletonManager.Instance.DestroyAllSingletons();
-            SceneManager.LoadScene((int)SceneType.Load);
-        }
-
-        public bool GetHasInternet()
-        {
-            return hasInternet;
+            PanelManager.Instance.ChangeInternetErrorPanelEnabled(!hasInternet);
         }
     }
 }

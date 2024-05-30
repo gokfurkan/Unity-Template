@@ -80,7 +80,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 720, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -990,6 +990,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1868988846324836514}
     m_Modifications:
+    - target: {fileID: 2682610885608449937, guid: a501d731955d49e4fb269e25d5a949da, type: 3}
+      propertyPath: m_text
+      value: RETRY
+      objectReference: {fileID: 0}
     - target: {fileID: 2754414906587733147, guid: a501d731955d49e4fb269e25d5a949da, type: 3}
       propertyPath: m_text
       value: RETRY
@@ -1081,6 +1085,10 @@ PrefabInstance:
     - target: {fileID: 4082830614025602153, guid: a501d731955d49e4fb269e25d5a949da, type: 3}
       propertyPath: m_Name
       value: btn_retry
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562293914520328353, guid: a501d731955d49e4fb269e25d5a949da, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadGame
       objectReference: {fileID: 0}
     - target: {fileID: 6786461122087298157, guid: a501d731955d49e4fb269e25d5a949da, type: 3}
       propertyPath: m_Name

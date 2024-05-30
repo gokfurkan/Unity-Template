@@ -92,75 +92,49 @@ namespace Template.Scripts
             Activate(PanelType.EndContinue);
         }
 
-        public void ActivateSettingsPanel()
+        public void ChangeSettingsPanelEnabled(bool status)
         {
-            Activate(PanelType.OpenSettings , false);
-            Activate(PanelType.Settings);
-        }
-
-        public void DeActivateSettingsPanel()
-        {
-            Activate(PanelType.Settings , false);
-            Activate(PanelType.OpenSettings);
+            Activate(PanelType.OpenSettings , !status);
+            Activate(PanelType.Settings , status);
         }
         
-        public void ActivateShopPanel()
+        public void ChangeShopPanelEnabled(bool status)
         {
-            Activate(PanelType.OpenShop , false);
-            Activate(PanelType.Shop);
-        }
-
-        public void DeActivateShopPanel()
-        {
-            Activate(PanelType.Shop , false);
-            Activate(PanelType.OpenShop);
+            Activate(PanelType.OpenShop , !status);
+            Activate(PanelType.Shop , status);
         }
         
-        public void ActivateDailyRewardsPanel()
+        public void ChangeDailyRewardsPanelEnabled(bool status)
         {
             DailyRewardManager.Instance.RefreshDateTime();
-            DailyRewardManager.Instance.HasOpenRewardPanel = true;
+            DailyRewardManager.Instance.HasOpenRewardPanel = status;
             
-            Activate(PanelType.OpenDailyRewards , false);
-            Activate(PanelType.DailyRewards);
+            Activate(PanelType.OpenDailyRewards , !status);
+            Activate(PanelType.DailyRewards , status);
         }
 
-        public void DeActivateDailyRewardsPanel()
+        public void ChangeDevPanelEnabled(bool status)
         {
-            DailyRewardManager.Instance.HasOpenRewardPanel = false;
-            
-            Activate(PanelType.DailyRewards , false);
-            Activate(PanelType.OpenDailyRewards);
+            Activate(PanelType.Dev , status);
+            Activate(PanelType.OpenDev , !status);
         }
 
-        public void ActivateDevPanel()
+        public void ChangeInternetErrorPanelEnabled(bool status)
         {
-            Activate(PanelType.Dev);
-            Activate(PanelType.OpenDev , false);
-        }
-        
-        public void DeActivateDevPanel()
-        {
-            Activate(PanelType.Dev , false);
-            Activate(PanelType.OpenDev);
-        }
-
-        public void ActivateNoInternetPanel()
-        {
-            Activate(PanelType.InternetCheck);
-        }
-
-        public void DeActivateNoInternetPanel()
-        {
-            Activate(PanelType.InternetCheck , false);
+            Activate(PanelType.InternetCheck , status);
         }
 
         public void LoadLevel()
         {
             BusSystem.CallLevelLoad();
         }
+
+        public void ReloadGame()
+        {
+            BusSystem.CallGameReload();
+        }
         
-        public void Activate(PanelType panelType, bool activate = true)
+        private void Activate(PanelType panelType, bool activate = true)
         {
             List<PanelTypeHolder> panels = FindPanels(panelType);
 
@@ -177,7 +151,7 @@ namespace Template.Scripts
             }
         }
         
-        public void DisableAll()
+        private void DisableAll()
         {
             foreach (var panel in allPanels)
             {

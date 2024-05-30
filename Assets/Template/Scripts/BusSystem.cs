@@ -18,6 +18,9 @@ namespace Template.Scripts
         public static Action OnLevelLoad;
         public static void CallLevelLoad() { OnLevelLoad?.Invoke(); }
         
+        public static Action OnGameReload;
+        public static void CallGameReload() { OnGameReload?.Invoke(); }
+        
         //Input
         public static Action OnMouseClickDown;
         public static void CallMouseClickDown() { OnMouseClickDown?.Invoke(); }

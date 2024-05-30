@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Template.Scripts
 {
-    public class DevPanelManager : MonoBehaviour
+    public class DevManager : MonoBehaviour
     {
         [SerializeField] private InputField ipf;
 

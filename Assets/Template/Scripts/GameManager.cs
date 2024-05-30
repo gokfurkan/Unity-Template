@@ -24,6 +24,7 @@ namespace Template.Scripts
             BusSystem.OnLevelEnd += OnLevelEnd;
 
             BusSystem.OnLevelLoad += OnLevelLoad;
+            BusSystem.OnGameReload += OnGameReload;
         }
 
         private void OnDisable()
@@ -32,6 +33,7 @@ namespace Template.Scripts
             BusSystem.OnLevelEnd -= OnLevelEnd;
             
             BusSystem.OnLevelLoad -= OnLevelLoad;
+            BusSystem.OnGameReload -= OnGameReload;
         }
 
         private void Update()
@@ -73,6 +75,14 @@ namespace Template.Scripts
             DOTween.KillAll();
             
             string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
+        }
+
+        private void OnGameReload()
+        {
+            DOTween.KillAll();
+            
+            string currentSceneName = SceneType.Load.ToString();
             SceneManager.LoadScene(currentSceneName);
         }
 

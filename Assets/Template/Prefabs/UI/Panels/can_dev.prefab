@@ -576,7 +576,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 720, y: 1280}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -736,8 +736,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Template.Scripts.PanelManager, Assembly-CSharp
-        m_MethodName: DeActivateDevPanel
-        m_Mode: 1
+        m_MethodName: ChangeDevPanelEnabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1474,7 +1474,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Template.Scripts.DevPanelController, Assembly-CSharp
+        m_TargetAssemblyTypeName: Template.Scripts.DevPanelManager, Assembly-CSharp
         m_MethodName: ResetSaveData
         m_Mode: 1
         m_Arguments:

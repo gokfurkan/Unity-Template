@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5707038003353684236}
   - component: {fileID: 5707038003353684239}
   m_Layer: 0
-  m_Name: man_devPanel
+  m_Name: man_dev
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
