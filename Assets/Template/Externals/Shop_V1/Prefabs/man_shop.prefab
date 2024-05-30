@@ -47,25 +47,45 @@ MonoBehaviour:
   shopOptions: {fileID: 11400000, guid: a047487eb5daddf458481daa0fdc80c1, type: 2}
   pageSwiper: {fileID: 0}
   skinButton: {fileID: 7792788424665062672, guid: 0cd4e9974a0afbd4890e3c1ae2c31b9a, type: 3}
-  costText: {fileID: 0}
   exclamationMark: {fileID: 0}
-  rarityOptions:
-  - rarityHolder: {fileID: 0}
-    skinRarity: 0
-    buttonAmount: 9
-    rarityCost: 300
-    activeButtonColor: {r: 1, g: 0.8352941, b: 0.45882353, a: 1}
-    deActiveButtonColor: {r: 1, g: 0.627451, b: 0, a: 1}
-  - rarityHolder: {fileID: 0}
-    skinRarity: 1
-    buttonAmount: 9
-    rarityCost: 700
-    activeButtonColor: {r: 0.46666667, g: 0.84313726, b: 1, a: 1}
-    deActiveButtonColor: {r: 0.07058824, g: 0.42745098, b: 1, a: 1}
-  - rarityHolder: {fileID: 0}
-    skinRarity: 2
-    buttonAmount: 9
-    rarityCost: 1200
-    activeButtonColor: {r: 0.5753287, g: 1, b: 0.07058823, a: 1}
-    deActiveButtonColor: {r: 0.10136038, g: 0.7264151, b: 0, a: 1}
+  selectedSkin: {fileID: 0}
+  costTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  unlockButtonClick: {fileID: 0}
+  unlockButtonAnimation: {fileID: 0}
+  activeUnlockButton: {fileID: 0}
+  deActiveUnlockButton: {fileID: 0}
+  rarityHolders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buttonIcons:
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
+  - {fileID: 21300000, guid: ccd3e6d6163ee45ebbd71b35e3a617cb, type: 3}
   shopButtons: []

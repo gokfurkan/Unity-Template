@@ -38,7 +38,7 @@ namespace Template.Scripts
             SaveManager.Instance.saveData.moneys = newAmount;
             SaveManager.Instance.Save();
             
-            SetMoneyText();
+            BusSystem.CallSetMoneys();
         }
 
         public void ResetMoneys()
@@ -46,7 +46,7 @@ namespace Template.Scripts
             SaveManager.Instance.saveData.moneys = 0;
             SaveManager.Instance.Save();
 
-            SetMoneyText();
+            BusSystem.CallSetMoneys();
         }
 
         private void SetMoneyText()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using Template.Scripts;
 using TMPro;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace Template.Externals.Shop_V1.Scripts
 
         [Space(10)] 
         public ButtonClickController unlockButtonClick;
+        public DOTweenAnimation unlockButtonAnimation;
         public GameObject activeUnlockButton;
         public GameObject deActiveUnlockButton;
         
@@ -186,10 +188,19 @@ namespace Template.Externals.Shop_V1.Scripts
                 int money = SaveManager.Instance.saveData.GetMoneys();
                 return money >= GetCurrentRarityCost();
             }
-
+            
             unlockButtonClick.enabled = HasMoney();
             activeUnlockButton.gameObject.SetActive(HasMoney());
             deActiveUnlockButton.gameObject.SetActive(!HasMoney());
+            
+            if (HasMoney())
+            {
+                unlockButtonAnimation.DORestart();
+            }
+            else
+            {
+                unlockButtonAnimation.DOKill();
+            }
             
             var buttonAmount = shopOptions.rarityOptions[pageSwiper.currentPage - 1].buttonAmount;
             var startIndex = (pageSwiper.currentPage - 1) * buttonAmount;
